@@ -1,0 +1,127 @@
+<fem.components.Node>
+n01, 0.0, 0.0
+n02, 0.0, 0.4
+n03, 0.5, 0.2
+n04, 1.0, 0.0
+n05, 1.0, 0.4
+n06, 1.5, 0.2
+n07, 2.0, 0.0
+n08, 2.0, 0.4
+n09, 2.5, 0.2
+n10, 3.0, 0.0
+n11, 3.0, 0.4
+n12, 3.5, 0.2
+n13, 4.0, 0.0
+n14, 4.0, 0.4
+n15, 4.5, 0.2
+n16, 5.0, 0.0
+n17, 5.0, 0.4
+n18, 5.5, 0.2
+n19, 6.0, 0.0
+n20, 6.0, 0.4
+</fem.components.Node>
+
+<fem.components.ConstantStrainTriangle>
+
+e01, n01, n03, n02, mat
+
+
+e02, n01, n04, n03, mat
+
+
+e03, n04, n05, n03, mat
+
+
+e04, n05, n02, n03, mat
+
+
+
+e05, n04, n06, n05, mat
+
+
+e06, n04, n07, n06, mat
+
+
+e07, n07, n08, n06, mat
+
+
+e08, n08, n05, n06, mat
+
+
+
+e09, n07, n09, n08, mat
+
+
+e10, n07, n10, n09, mat
+
+
+e11, n10, n11, n09, mat
+
+
+e12, n11, n08, n09, mat
+
+
+
+e13, n10, n12, n11, mat
+
+
+e14, n10, n13, n12, mat
+
+
+e15, n13, n14, n12, mat
+
+
+e16, n14, n11, n12, mat
+
+
+
+e17, n13, n15, n14, mat
+
+
+e18, n13, n16, n15, mat
+
+
+e19, n16, n17, n15, mat
+
+
+e20, n17, n14, n15, mat
+
+
+
+e21, n16, n18, n17, mat
+
+
+e22, n16, n19, n18, mat
+
+
+e23, n19, n20, n18, mat
+
+
+e24, n20, n17, n18, mat
+
+
+</fem.components.ConstantStrainTriangle>
+
+<fem.components.PrimalBoundaryCondition>
+
+u01_1, n01, 1, 0.0
+u01_2, n01, 2, 0.0
+u02_1, n02, 1, 0.0
+</fem.components.PrimalBoundaryCondition>
+
+<fem.components.DualZeroDBoundaryCondition>
+
+q02_2, n02, 2, -10000
+q05_2, n05, 2, -20000
+q08_2, n08, 2, -20000
+q11_2, n11, 2, -20000
+q14_2, n14, 2, -20000
+q17_2, n17, 2, -20000
+q20_2, n20, 2, -10000
+</fem.components.DualZeroDBoundaryCondition>
+
+
+
+<fem.components.ElasticMaterial>
+mat, 27472527470, 0.428571
+</fem.components.ElasticMaterial>

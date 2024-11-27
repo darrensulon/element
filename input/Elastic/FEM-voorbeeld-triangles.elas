@@ -1,0 +1,36 @@
+<fem.components.Node>
+n1, 0.0, 0.0
+n2, 0.4, 0.0
+n3, 0.4, 0.2
+n4, 0.0, 0.2
+</fem.components.Node>
+
+<fem.components.ConstantStrainTriangle>
+
+e1, n1, n2, n3, mat
+
+
+e2, n1, n3, n4, mat
+</fem.components.ConstantStrainTriangle>
+
+<fem.components.PrimalBoundaryCondition>
+
+u11, n1, 1, 0.0
+u12, n1, 2, 0.0
+u41, n4, 1, 0.0
+u42, n4, 2, 0.0
+</fem.components.PrimalBoundaryCondition>
+
+<fem.components.DualZeroDBoundaryCondition>
+
+q21, n2, 1, 140000
+q22, n2, 2, 0
+q31, n3, 1, 140000
+q32, n3, 2, 0
+</fem.components.DualZeroDBoundaryCondition>
+
+
+
+<fem.components.ElasticMaterial>
+mat, 210000000000, 0.3
+</fem.components.ElasticMaterial>
