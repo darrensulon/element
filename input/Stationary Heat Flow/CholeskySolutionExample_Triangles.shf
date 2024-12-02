@@ -1,0 +1,44 @@
+# Define nodes
+# node identifier, coordinate values
+<fem.components.Node>
+n1, 1, 1
+n2, 0, 1
+n3, 1, 0.5
+n4, 0, 0.5
+n5, 1, 0
+n6, 0, 0
+</fem.components.Node>
+
+# Define element type
+# element identifier, identifiers of its nodes, identifier of its material
+<fem.components.Triangle>
+e1, n3, n4, n6, mat
+e2, n5, n3, n6, mat
+e3, n1, n2, n4, mat
+e4, n3, n1, n4, mat
+</fem.components.Triangle>
+
+# Define the primal boundary conditions
+# condition identifier, identifier of node where it occurs,  value
+<fem.components.PrimalBoundaryCondition>
+s1, n1, 30
+s3, n3, 30
+</fem.components.PrimalBoundaryCondition>
+
+# Define the internal loading (heat source loading) on elements
+# identifier of load, identifier of element where it occurs, load value
+<fem.components.ElementLoad>
+al1, e1, 10.
+al2, e2, 10.
+</fem.components.ElementLoad>
+
+<fem.components.DualZeroDBoundaryCondition>
+dl, n4, 45.83
+d2, n6, 54.17
+</fem.components.DualZeroDBoundaryCondition>
+
+# Define material property
+# material identifier, property value
+<fem.components.StationaryHeatFlowMaterial>
+mat, 0.5
+</fem.components.StationaryHeatFlowMaterial>
