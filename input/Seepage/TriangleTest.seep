@@ -1,0 +1,28 @@
+<fem.components.Node>
+n1, 0, 0
+n2, 2, 0
+n3, 2, 2
+n4, 0, 2
+n5, 1, 1
+</fem.components.Node>
+
+
+<fem.components.Triangle>
+e1, n1, n2, n5, mat
+e2, n1, n5, n4, mat
+
+e3, n4, n5, n3, mat
+
+e4, n2, n3, n5, mat
+</fem.components.Triangle>
+
+<fem.components.PrimalBoundaryCondition>
+s1, n1, 10.0
+s2, n2, 0.0
+s3, n3, 0.0
+s4, n4, 10.0
+</fem.components.PrimalBoundaryCondition>
+
+<fem.components.SeepageMaterial>
+mat, 0.00025
+</fem.components.SeepageMaterial>
